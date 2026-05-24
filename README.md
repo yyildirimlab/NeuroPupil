@@ -24,7 +24,7 @@ Tutorial Videos to Replicate DeepVision using your data:
 [NeuroPupil Tutorial Playlist](https://www.youtube.com/playlist?list=PLdt5kwsCtktxSgYm0I6CQ1be1tvhi67qd)
 
 ## HPC Code
-Attached here is the SLEAP based command lines that was used to do high performance computing analysis at Cleveland Clinic Lerner Research Institute using its avaliable GPU Type (A100) and Node Number (n = 2). 
+Attached here is the SLEAP based command lines that was used to do high performance computing analysis at Cleveland Clinic Research using its avaliable GPU Type (A100) and Node Number (n = 2). 
 
 ## Troubleshoot
 If you have a technical question with either [`mediaGUI`](https://github.com/khicken/mediaGUI) or [`sleapGUI`](https://github.com/khicken/sleapGUI), then feel free to request a "New Issue" in the "Issues" section for the respective GUI.
