@@ -25,15 +25,15 @@ Tutorial Videos to Replicate DeepVision using your data:
 [NeuroPupil Tutorial Playlist](https://www.youtube.com/playlist?list=PLdt5kwsCtktxSgYm0I6CQ1be1tvhi67qd)
 
 Video Part 1 Summary - Concatenation
-1. Open the Downloaded mediaGUI
-2. Select the "Add Video" button to add a video
+1. Open the Downloaded **mediaGUI**
+2. Select the **Add Video** button to add a video
 3. Repeat this step for all of the data intended for analysis.
 4. Choose the specific number of frames needed to be extracted. Total number of frames that can be concatenated is 30k.
    Note: In the video, 5 videos were used to create a custom model. 30k frames / 5 videos = 6k frames per video was extracted evenly.
          Adjust the specific number of evenly extracted frames to how many videos you want to analyze.
 5. Make the output fps match that of the frame speed of the raw video.
-   Note: In the video, the data's frame rate was 30 fps.
-6. Click "Process Videos" and save the output to the desired location
+   Note: In the video, the data's frame rate was 30 fps. Adjust the frame rate depending on your experimental video acquistion speed.
+6. Click **Process Videos** and save the output to the desired location
 
 ## HPC Code
 Attached here is the SLEAP based command lines that was used to do high performance computing analysis at Cleveland Clinic Research using its avaliable GPU Type (A100) and Node Number (n = 2). 
