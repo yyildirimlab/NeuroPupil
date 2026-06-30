@@ -24,7 +24,8 @@ Tutorial Videos to Replicate DeepVision using your data:
 
 [NeuroPupil Tutorial Playlist](https://www.youtube.com/playlist?list=PLdt5kwsCtktxSgYm0I6CQ1be1tvhi67qd)
 
-Video Part 1 Summary - Concatenation
+**Video Part 1 Summary - Concatenation**
+
 1. Open the Downloaded **mediaGUI**
  
 2. Select the **Add Video** button to add a video
@@ -42,7 +43,7 @@ Video Part 1 Summary - Concatenation
 6. Click **Process Videos** and save the output to the desired location
 
 
-Video Part 2 Summary - Pupil Model Creation
+**Video Part 2 Summary - Pupil Model Creation**
 
 1. Open Anaconda Prompt
 
