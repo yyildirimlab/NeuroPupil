@@ -64,6 +64,35 @@ Tutorial Videos to Replicate DeepVision using your data:
 </pre>
 
 
+5. Insert the Concatenated Video, which was created in Video Part 1
+
+6. Go to the **Skeleton** Tab on the Bottom Right, and add 4 nodes/keypoints
+7. Name the points the following: Top, Bottom, Right, Left
+8. Click the **Edges** Tab on the Top Right, and add 2 edges from the keypoints by selecting the desired edge pairs below, then click the button **Add Edge**.
+
+   Top - Bottom
+
+   
+   Right - Left
+
+10. Next, go to **Labeling Suggestions** to extract the images needed to label. Use the default **sample** method so that it extracts the desired frame number evenly.
+
+Note: In the tutorial, 5 videos were used to make the concatenated video. Therefore, 10 images are needed to be labeled (2 images per video, shown in the paper). So in the GUI, specify 9 frames (10 - 1 frames) to pick the first 9 frames, then scroll to the very last frame in the concatenated video, and select **Add current frame** to add the last frame. Total images labeled will be 10 for this case.
+
+In the paper, 200 videos were used to create a concatenated video for NeuroPupil Animal data, therefore 400 images were used to label. 
+
+12. Go to the fist blue box on the bottom left part of the GUI, which selects the first image that is needed to be labeled. Click **New Instance** on the bottom right, then it will show the points that have the edge connections. Drag the points to the desired location of the pupil.
+
+13. Click the next blue box and select **New Instance**, it will generate the keypoints that were used in the previous frame. Just drag them to the new pupil location, and continue this process until all of the blue boxes have the labeled images.
+
+14. Once all of the frames are finished, save the SLEAP .slp file to the desired location.
+
+15. Click **Predict**, then **Run Training**
+
+16. Go to **Single Instance Model Configuration**, and select **baseline_large_rf.single(baseline_large_rf.single.json)** file on the top.
+
+17. Select 
+
 ## HPC Code
 Attached here is the SLEAP based command lines that was used to do high performance computing analysis at Cleveland Clinic Research using its avaliable GPU Type (A100) and Node Number (n = 2). 
 
