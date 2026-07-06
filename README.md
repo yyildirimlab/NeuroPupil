@@ -91,7 +91,9 @@ In the paper, 200 videos were used to create a concatenated video for NeuroPupil
 
 16. Go to **Single Instance Model Configuration**, and select **baseline_large_rf.single(baseline_large_rf.single.json)** file on the top.
 
-17. Select 
+17. In the Model section on the Top Right, set the **Max Stride** and **Filters** to **64**
+
+18. Once the model parameters are set, click **Run** on the Bottom Right.  
 
 ## HPC Code
 Attached here is the SLEAP based command lines that was used to do high performance computing analysis at Cleveland Clinic Research using its avaliable GPU Type (A100) and Node Number (n = 2). 
