@@ -74,7 +74,7 @@ Tutorial Videos to Replicate NeuroPupil using your data:
 
 8. Next, go to **Labeling Suggestions** to extract the images needed to label. Use the default **sample** method so that it extracts the desired frame number evenly.
 
-Note: In the tutorial, 5 videos were used to make the concatenated video. Therefore, 10 images are needed to be labeled (2 images per video, shown in the paper). So in the GUI, specify 9 frames (10 - 1 frames) to pick the first 9 frames, then scroll to the very last frame in the concatenated video, and select **Add current frame** to add the last frame. Total images labeled will be 10 for this case.
+Note: In the tutorial, 5 videos were used to make the concatenated video. Therefore, 10 images are needed to be labeled (2 images per video, shown in the paper). So in the GUI, specify 9 frames (10 total frames - 1) to pick the first 9 frames, then scroll to the very last frame in the concatenated video, and select **Add current frame** to add the last frame. Total images labeled will remain at 10.
 
 In the paper, 200 videos were used to create a concatenated video for NeuroPupil Animal data, therefore 400 images were used to label. 
 
