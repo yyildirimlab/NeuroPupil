@@ -119,6 +119,8 @@ In the paper, 200 videos were used to create a concatenated video for NeuroPupil
 
 7. The output will be the following: SLEAP (.slp) file, Pupil Keypoint CSV file for further processing, and labeled video.
 
+Note: If you do not want the labeled pupil video to save time, after you chose the NeuroPupil model and load the raw pupil videos required for analysis, first click the **Create SLEAP Files** button to create the (.slp) file. Once it is done, then click the **Create CSV(s)** button to create the csv file of the analyzed data for further processing.
+
 ## HPC Code
 Attached here is the SLEAP based command lines that was used to do high performance computing analysis at Cleveland Clinic Research using its avaliable GPU Type (A100) and Node Number (n = 2). 
 
