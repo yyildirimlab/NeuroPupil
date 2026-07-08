@@ -20,7 +20,7 @@ This tool incorporates the optimized parameter combination specifically identifi
 
 ## Usage Demo
 
-Tutorial Videos to Replicate DeepVision using your data:
+Tutorial Videos to Replicate NeuroPupil using your data:
 
 [NeuroPupil Tutorial Playlist](https://www.youtube.com/playlist?list=PLdt5kwsCtktxSgYm0I6CQ1be1tvhi67qd)
 
