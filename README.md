@@ -3,7 +3,7 @@ Directory to two software tools used in the "NeuroPupil Paper"
 
 https://www.biorxiv.org/content/10.64898/2026.05.14.725098v1
 
-This website accompanies a manuscript currently under peer review.
+This website accompanies a manuscript currently under peer review, which is Published in Dr. Murat Yildirim's [Lab](https://www.lerner.ccf.org/neurosciences/yildirim/) at the Department of Neurosciences at  Cleveland Clinic Research
 
 <img width="9600" height="4442" alt="DeepVision_Animal_GUI_Flow_Chart (3)" src="https://github.com/user-attachments/assets/25572b22-cbb6-4769-b341-99218e1895f7" />
 
