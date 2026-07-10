@@ -21,9 +21,9 @@ This tool incorporates the optimized parameter combination specifically identifi
 
 ## NeuroPupil Pretrained Models
 
-NeuroPupil Animal Model: [Download Here](https://zenodo.org/records/21298222)
+**NeuroPupil Animal Model:** [Download Here](https://zenodo.org/records/21298222)
 
-NeuroPupil Human Model: [Download Here](https://zenodo.org/records/21298277)
+**NeuroPupil Human Model:** [Download Here](https://zenodo.org/records/21298277)
 
 Note: Make sure you have the SLEAP Version 1.4.1 downloaded 
 
