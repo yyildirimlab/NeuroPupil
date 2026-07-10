@@ -1,0 +1,1304 @@
+#!/bin/sh
+#SBATCH --mail-type=BEGIN,END,FAIL
+#SBATCH --mail-user=#[personal email address]##
+#SBATCH --ntasks-per-node=2
+#SBATCH --cpus-per-task=2
+#SBATCH --gres=gpu:3
+#SBATCH --mem-per-gpu=128G
+#SBATCH --partition=gpu-a100
+#SBATCH --job-name=DeepVision_Human_Model
+#SBATCH -o Conc.out    # Standard output
+#SBATCH -e Conc.err    # Standard error
+
+module load SLEAP/1.3.2
+
+
+# NeuroPupil Animal Model used for Wheel and Airball Data. 200 videos were analyzed
+
+# Wheel Data
+
+# F11
+	# Analyze/Inference the Video
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F11/Day1/F11pupil_Day1.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F11/5-27-21/F11pupil052721_Day1.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F11/Day2/F11pupil_Day2.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F11/5-28-21/F11pupil_Day2.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F11/Day3/F11pupil_Day3.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F11/5-30-21/F11pupil2_053121_Day3.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F11/Day4/F11pupil_Day4.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F11/6-1-21/F11pupil_Day4.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F11/Day5/F11pupil_Day5.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F11/6-2-21/F11pupil_Day5.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F11/Day6/F11pupil_Day6.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F11/6-3-21/F11pupil2_Day6.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F11/Day7/F11pupil_Day7.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F11/6-4-21/F11pupil_Day7.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F11/Day8/F11pupil_Day8.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F11/6-5-21/F11pupil_Day8.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F11/Day9/F11pupil_Day9.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F11/6-6-21/F11pupil_Day9.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F11/Day10/F11pupil_Day10.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F11/6-7-21/F11pupil_Day10.avi"
+
+	# Create Labeled Video 
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F11/Day1/F11pupil_Day1.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F11/Day1/F11pupil_Day1.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F11/Day2/F11pupil_Day2.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F11/Day2/F11pupil_Day2.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F11/Day3/F11pupil_Day3.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F11/Day3/F11pupil_Day3.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F11/Day4/F11pupil_Day4.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F11/Day4/F11pupil_Day4.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F11/Day5/F11pupil_Day5.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F11/Day5/F11pupil_Day5.slp" 
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F11/Day6/F11pupil_Day6.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F11/Day6/F11pupil_Day6.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F11/Day7/F11pupil_Day7.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F11/Day7/F11pupil_Day7.slp" 
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F11/Day8/F11pupil_Day8.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F11/Day8/F11pupil_Day8.slp" 
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F11/Day9/F11pupil_Day9.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F11/Day9/F11pupil_Day9.slp" 
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F11/Day10/F11pupil_Day10.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F11/Day10/F11pupil_Day10.slp" 
+
+	# Convert Results to h5 for csv files
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F11/Day1/F11pupil_Day1.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F11/Day1/F11pupil_Day1.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F11/Day2/F11pupil_Day2.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F11/Day2/F11pupil_Day2.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F11/Day3/F11pupil_Day3.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F11/Day3/F11pupil_Day3.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F11/Day4/F11pupil_Day4.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F11/Day4/F11pupil_Day4.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F11/Day5/F11pupil_Day5.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F11/Day5/F11pupil_Day5.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F11/Day6/F11pupil_Day6.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F11/Day6/F11pupil_Day6.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F11/Day7/F11pupil_Day7.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F11/Day7/F11pupil_Day7.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F11/Day8/F11pupil_Day8.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F11/Day8/F11pupil_Day8.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F11/Day9/F11pupil_Day9.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F11/Day9/F11pupil_Day9.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F11/Day10/F11pupil_Day10.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F11/Day10/F11pupil_Day10.slp"
+
+# F12 
+	# Analyze Video
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F12/Day1/F12pupil_Day1.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F12/5-27-21/F12pupil_Day1.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F12/Day2/F12pupil_Day2.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F12/5-28-21/F12pupil_Day2.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F12/Day3/F12pupil_Day3.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F12/5-30-21/F12pupil_Day3.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F12/Day4/F12pupil_Day4.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F12/6-1-21/F12pupil_Day4.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F12/Day5/F12pupil_Day5.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F12/6-2-21/F12pupil_Day5.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F12/Day6/F12pupil_Day6.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F12/6-3-21/f12pupil_Day6.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F12/Day7/F12pupil_Day7.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F12/6-4-21/f12pupil_Day7.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F12/Day8/F12pupil_Day8.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F12/6-7-21/F12pupil_Day8.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F12/Day9/F12pupil_Day9.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F12/6-8-21/F12pupil_Day9.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F12/Day10/F12pupil_Day10.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F12/6-9-21/F12pupil_Day10.avi"
+	
+	# Create Video
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F12/Day1/F12pupil_Day1.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F12/Day1/F12pupil_Day1.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F12/Day2/F12pupil_Day2.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F12/Day2/F12pupil_Day2.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F12/Day3/F12pupil_Day3.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F12/Day3/F12pupil_Day3.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F12/Day4/F12pupil_Day4.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F12/Day4/F12pupil_Day4.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F12/Day5/F12pupil_Day5.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F12/Day5/F12pupil_Day5.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F12/Day6/F12pupil_Day6.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F12/Day6/F12pupil_Day6.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F12/Day7/F12pupil_Day7.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F12/Day7/F12pupil_Day7.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F12/Day8/F12pupil_Day8.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F12/Day8/F12pupil_Day8.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F12/Day9/F12pupil_Day9.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F12/Day9/F12pupil_Day9.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F12/Day10/F12pupil_Day10.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F12/Day10/F12pupil_Day3.mp4"
+	
+	# Convert Results to h5 for csv files
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F12/Day1/F12pupil_Day1.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F12/Day1/F12pupil_Day1.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F12/Day2/F12pupil_Day2.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F12/Day2/F12pupil_Day2.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F12/Day3/F12pupil_Day3.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F12/Day3/F12pupil_Day3.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F12/Day4/F12pupil_Day4.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F12/Day4/F12pupil_Day4.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F12/Day5/F12pupil_Day5.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F12/Day5/F12pupil_Day5.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F12/Day6/F12pupil_Day6.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F12/Day6/F12pupil_Day6.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F12/Day7/F12pupil_Day7.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F12/Day7/F12pupil_Day7.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F12/Day8/F12pupil_Day8.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F12/Day8/F12pupil_Day8.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F12/Day9/F12pupil_Day9.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F12/Day9/F12pupil_Day9.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F12/Day10/F12pupil_Day10.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F12/Day10/F12pupil_Day10.slp"
+
+# F16 
+	# Analyze Videos
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F16/Day1/F16pupil_Day1.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F16/7-15-21/F16pupil_Day1.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F16/Day2/F16pupil_Day2.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F16/7-16-21/F16pupil_Day2.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F16/Day3/F16pupil_Day3.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F16/7-19-21/F16pupil_Day3.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F16/Day4/F16pupil_Day4.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F16/7-20-21/F16pupil_Day4.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F16/Day5/F16pupil_Day5.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F16/7-21-21/F16pupil_Day5.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F16/Day6/F16pupil_Day6.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F16/7-22-21/F16pupil_Day6.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F16/Day7/F16pupil_Day7.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F16/7-23-21/F16pupil_Day7.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F16/Day8/F16pupil_Day8.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F16/7-26-21/F16pupil_Day8.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F16/Day9/F16pupil_Day9.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F16/7-27-21/F16pupil_Day9.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F16/Day10/F16pupil_Day10.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F16/7-28-21/F16pupil_Day10.avi"
+
+	# Create Video
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F16/Day1/F16pupil_Day1.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F16/Day1/F16pupil_Day1.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F16/Day2/F16pupil_Day2.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F16/Day2/F16pupil_Day2.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F16/Day3/F16pupil_Day3.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F16/Day3/F16pupil_Day3.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F16/Day4/F16pupil_Day4.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F16/Day4/F16pupil_Day4.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F16/Day5/F16pupil_Day5.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F16/Day5/F16pupil_Day5.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F16/Day6/F16pupil_Day6.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F16/Day6/F16pupil_Day6.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F16/Day7/F16pupil_Day7.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F16/Day7/F16pupil_Day7.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F16/Day8/F16pupil_Day8.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F16/Day8/F16pupil_Day8.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F16/Day9/F16pupil_Day9.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F16/Day9/F16pupil_Day9.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F16/Day10/F16pupil_Day10.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F16/Day10/F16pupil_Day10.slp"
+
+	# Convert Results to h5 for csv files
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F16/Day1/F16pupil_Day1.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F16/Day1/F16pupil_Day1.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F16/Day2/F16pupil_Day2.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F16/Day2/F16pupil_Day2.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F16/Day3/F16pupil_Day3.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F16/Day3/F16pupil_Day3.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F16/Day4/F16pupil_Day4.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F16/Day4/F16pupil_Day4.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F16/Day5/F16pupil_Day5.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F16/Day5/F16pupil_Day5.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F16/Day6/F16pupil_Day6.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F16/Day6/F16pupil_Day6.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F16/Day7/F16pupil_Day7.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F16/Day7/F16pupil_Day7.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F16/Day8/F16pupil_Day8.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F16/Day8/F16pupil_Day8.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F16/Day9/F16pupil_Day9.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F16/Day9/F16pupil_Day9.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F16/Day10/F16pupil_Day10.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F16/Day10/F16pupil_Day10.slp"
+
+# F17
+	# Analyze Video
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F17/Day1/F17pupil_Day1.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F17/7-15-21/F17pupil_Day1.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F17/Day2/F17pupil_Day2.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F17/7-16-21/F17pupil_Day2.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F17/Day3/F17pupil_Day3.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F17/7-19-21/F17pupil_Day3.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F17/Day4/F17pupil_Day4.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F17/7-20-21/F17pupil_Day4.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F17/Day5/F17pupil_Day5.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F17/7-21-21/F17pupil_Day5.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F17/Day6/DayF17pupil_Day6.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F17/7-22-21/F17pupil_Day6.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F17/Day7/F17pupil_Day7.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F17/7-23-21/F17pupil_Day7.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F17/Day8/F17pupil_Day8.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F17/7-26-21/F17pupil_Day8.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F17/Day9/F17pupil_Day9.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F17/7-27-21/F17pupil_Day9.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F17/Day10/F17pupil_Day10.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F17/7-28-21/F17pupil_Day10.avi"
+
+	# Create Video
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F17/Day1/F17pupil_Day1.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F17/Day1/F17pupil_Day1.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F17/Day2/F17pupil_Day2.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F17/Day2/F17pupil_Day2.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F17/Day3/F17pupil_Day3.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F17/Day3/F17pupil_Day3.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F17/Day4/F17pupil_Day4.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F17/Day4/F17pupil_Day4.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F17/Day5/F17pupil_Day5.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F17/Day5/F17pupil_Day5.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F17/Day6/F17pupil_Day6.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F17/Day6/F17pupil_Day6.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F17/Day7/F17pupil_Day7.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F17/Day7/F17pupil_Day7.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F17/Day8/F17pupil_Day8.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F17/Day8/F17pupil_Day8.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F17/Day9/F17pupil_Day9.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F17/Day9/F17pupil_Day9.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F17/Day10/F17pupil_Day10.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F17/Day10/F17pupil_Day10.slp"
+
+	# Convert Results to h5 for csv files
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F17/Day1/F17pupil_Day1.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F17/Day1/F17pupil_Day1.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F17/Day2/F17pupil_Day2.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F17/Day2/F17pupil_Day2.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F17/Day3/F17pupil_Day3.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F17/Day3/F17pupil_Day3.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F17/Day4/F17pupil_Day4.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F17/Day4/F17pupil_Day4.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F17/Day5/F17pupil_Day5.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F17/Day5/F17pupil_Day5.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F17/Day6/F17pupil_Day6.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F17/Day6/F17pupil_Day6.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F17/Day7/F17pupil_Day7.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F17/Day7/F17pupil_Day7.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F17/Day8/F17pupil_Day8.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F17/Day8/F17pupil_Day8.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F17/Day9/F17pupil_Day9.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F17/Day9/F17pupil_Day9.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F17/Day10/F17pupil_Day10.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F17/Day10/F17pupil_Day10.slp"
+
+# F20
+	# Analyze Video
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F20/Day1/F20pupil_Day1.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F20/7-15-21/F20pupill_Day1.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F20/Day2/F20pupil_Day2.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F20/7-16-21/F20pupill_Day2.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F20/Day3/F20pupil_Day3.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F20/7-19-21/F20pupill_Day3.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F20/Day4/F20pupil_Day4.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F20/7-20-21/F20pupill_Day4.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F20/Day5/F20pupil_Day5.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F20/7-21-21/F20pupill_Day5.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F20/Day6/F20pupil_Day6.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F20/7-22-21/F20pupill_Day6.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F20/Day7/F20pupil_Day7.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F20/7-23-21/F20pupill_Day7.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F20/Day8/F20pupil_Day8.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F20/7-26-21/F20pupill_Day8.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F20/Day9/F20pupil_Day9.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F20/7-27-21/F20pupill_Day9.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F20/Day10/F20pupil_Day10.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F20/7-28-21/F20pupill_Day10.avi"
+
+	# Create Video
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F20/Day1/F20pupil_Day1.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F20/Day1/F20pupil_Day1.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F20/Day2/F20pupil_Day2.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F20/Day2/F20pupil_Day2.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F20/Day3/F20pupil_Day3.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F20/Day3/F20pupil_Day3.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F20/Day4/F20pupil_Day4.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F20/Day4/F20pupil_Day4.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F20/Day5/F20pupil_Day5.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F20/Day5/F20pupil_Day5.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F20/Day6/F20pupil_Day6.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F20/Day6/F20pupil_Day6.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F20/Day7/F20pupil_Day7.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F20/Day7/F20pupil_Day7.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F20/Day8/F20pupil_Day8.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F20/Day8/F20pupil_Day8.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F20/Day9/F20pupil_Day9.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F20/Day9/F20pupil_Day9.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F20/Day10/F20pupil_Day10.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F20/Day10/F20pupil_Day10.slp"
+
+	# Convert Results to h5 for csv files
+	sleap-convert --format h5 -o "/mnt/beegfs/ozdemik2/Novel_Analysis/Airball_M_Wheel_D/F20/Day1/F20pupil_Day1.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F20/Day1/F20pupil_Day1.slp"
+
+	sleap-convert --format h5 -o "/mnt/beegfs/ozdemik2/Novel_Analysis/Airball_M_Wheel_D/F20/Day2/F20pupil_Day2.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F20/Day2/F20pupil_Day2.slp"
+
+	sleap-convert --format h5 -o "/mnt/beegfs/ozdemik2/Novel_Analysis/Airball_M_Wheel_D/F20/Day3/F20pupil_Day3.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F20/Day3/F20pupil_Day3.slp"
+
+	sleap-convert --format h5 -o "/mnt/beegfs/ozdemik2/Novel_Analysis/Airball_M_Wheel_D/F20/Day4/F20pupil_Day4.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F20/Day4/F20pupil_Day4.slp"
+
+	sleap-convert --format h5 -o "/mnt/beegfs/ozdemik2/Novel_Analysis/Airball_M_Wheel_D/F20/Day5/F20pupil_Day5.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F20/Day5/F20pupil_Day5.slp"
+
+	sleap-convert --format h5 -o "/mnt/beegfs/ozdemik2/Novel_Analysis/Airball_M_Wheel_D/F20/Day6/F20pupil_Day6.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F20/Day6/F20pupil_Day6.slp"
+
+	sleap-convert --format h5 -o "/mnt/beegfs/ozdemik2/Novel_Analysis/Airball_M_Wheel_D/F20/Day7/F20pupil_Day7.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F20/Day7/F20pupil_Day7.slp"
+
+	sleap-convert --format h5 -o "/mnt/beegfs/ozdemik2/Novel_Analysis/Airball_M_Wheel_D/F20/Day8/F20pupil_Day8.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F20/Day8/F20pupil_Day8.slp"
+
+	sleap-convert --format h5 -o "/mnt/beegfs/ozdemik2/Novel_Analysis/Airball_M_Wheel_D/F20/Day9/F20pupil_Day9.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F20/Day9/F20pupil_Day9.slp"
+
+	sleap-convert --format h5 -o "/mnt/beegfs/ozdemik2/Novel_Analysis/Airball_M_Wheel_D/F20/Day10/F20pupil_Day10.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F20/Day10/F20pupil_Day10.slp"
+
+# F21
+	# Analyze Video
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F21/Day1/F21pupil_Day1.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F21/7-15-21/F21pupill_Day1.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F21/Day2/F21pupil_Day2.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F21/7-16-21/F21pupill_Day2.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F21/Day3/F21pupil_Day3.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F21/7-19-21/F21pupill_Day3.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F21/Day4/F21pupil_Day4.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F21/7-20-21/F21pupill_Day4.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F21/Day5/F21pupil_Day5.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F21/7-21-21/F21pupill_Day5.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F21/Day6/F21pupil_Day6.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F21/7-22-21/F21pupil_Day6.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F21/Day7/F21pupil_Day7.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F21/7-23-21/F21pupil_Day7.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F21/Day8/F21pupil_Day8.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F21/7-26-21/F21pupil2_Day8.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F21/Day9/F21pupil_Day9.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F21/7-27-21/F21pupil_Day9.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F21/Day10/F21pupil_Day10.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F21/7-28-21/F21pupil_Day10.avi"
+
+	# Create Video
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F21/Day1/F21pupil_Day1.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F21/Day1/F21pupil_Day1.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F21/Day2/F21pupil_Day2.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F21/Day2/F21pupil_Day2.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F21/Day3/F21pupil_Day3.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F21/Day3/F21pupil_Day3.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F21/Day4/F21pupil_Day4.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F21/Day4/F21pupil_Day4.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F21/Day5/F21pupil_Day5.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F21/Day5/F21pupil_Day5.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F21/Day6/F21pupil_Day6.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F21/Day6/F21pupil_Day6.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F21/Day7/F21pupil_Day7.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F21/Day7/F21pupil_Day7.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F21/Day8/F21pupil_Day8.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F21/Day8/F21pupil_Day8.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F21/Day9/F21pupil_Day9.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F21/Day9/F21pupil_Day9.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F21/Day10/F21pupil_Day10.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F21/Day10/F21pupil_Day10.slp"
+
+	# Convert Results to h5 for csv files
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F21/Day1/F21pupil_Day1.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F21/Day1/F21pupil_Day1.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F21/Day2/F21pupil_Day2.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F21/Day2/F21pupil_Day2.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F21/Day3/F21pupil_Day3.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F21/Day3/F21pupil_Day3.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F21/Day4/F21pupil_Day4.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F21/Day4/F21pupil_Day4.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F21/Day5/F21pupil_Day5.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F21/Day5/F21pupil_Day5.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F21/Day6/F21pupil_Day6.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F21/Day6/F21pupil_Day6.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F21/Day7/F21pupil_Day7.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F21/Day7/F21pupil_Day7.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F21/Day8/F21pupil_Day8.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F21/Day8/F21pupil_Day8.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F21/Day9/F21pupil_Day9.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F21/Day9/F21pupil_Day9.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F21/Day10/F21pupil_Day10.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F21/Day10/F21pupil_Day10.slp"
+
+# F22
+	# Analyze Video
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F22/Day1/F22pupil_Day1.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F22/7-30-21/F22pupil_Day1.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F22/Day2/F22pupil_Day2.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F22/8-2-21/F22pupil_Day2.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F22/Day3/F22pupil_Day3.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F22/8-3-21/F22pupil_Day3.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F22/Day4/F22pupil_Day4.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F22/8-4-21/F22pupil_Day4.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F22/Day5/F22pupil_Day5.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F22/8-5-21/F22pupil_Day5.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F22/Day6/F22pupil_Day6.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F22/8-6-21/F22pupil_2_Day6.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F22/Day7/F22pupil_Day7.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F22/8-8-21/f22pupil2_Day7.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F22/Day8/F22pupil_Day8.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F22/8-10-21/F22pupil2_Day8.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F22/Day9/F22pupil_Day9.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F22/8-11-21/F22pupil_Day9.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F22/Day10/F22pupil_Day10.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F22/8-12-21/F22pupil_Day10.avi"
+
+	# Create Video
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F22/Day1/F22pupil_Day1.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F22/Day1/F22pupil_Day1.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F22/Day2/F22pupil_Day2.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F22/Day2/F22pupil_Day2.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F22/Day3/F22pupil_Day3.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F22/Day3/F22pupil_Day3.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F22/Day4/F22pupil_Day4.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F22/Day4/F22pupil_Day4.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F22/Day5/F22pupil_Day5.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F22/Day5/F22pupil_Day5.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F22/Day6/F22pupil_Day6.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F22/Day6/F22pupil_Day6.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F22/Day7/F22pupil_Day7.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F22/Day7/F22pupil_Day7.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F22/Day8/F22pupil_Day8.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F22/Day8/F22pupil_Day8.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F22/Day9/F22pupil_Day9.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F22/Day9/F22pupil_Day9.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F22/Day10/F22pupil_Day10.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F22/Day10/F22pupil_Day10.slp"
+
+	# Convert Results to h5 for csv files
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F22/Day1/F22pupil_Day1.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F22/Day1/F22pupil_Day1.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F22/Day2/F22pupil_Day2.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F22/Day2/F22pupil_Day2.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F22/Day3/F22pupil_Day3.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F22/Day3/F22pupil_Day3.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F22/Day4/F22pupil_Day4.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F22/Day4/F22pupil_Day4.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F22/Day5/F22pupil_Day5.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F22/Day5/F22pupil_Day5.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F22/Day6/F22pupil_Day6.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F22/Day6/F22pupil_Day6.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F22/Day7/F22pupil_Day7.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F22/Day7/F22pupil_Day7.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F22/Day8/F22pupil_Day8.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F22/Day8/F22pupil_Day8.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F22/Day9/F22pupil_Day9.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F22/Day9/F22pupil_Day9.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F22/Day10/F22pupil_Day10.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F22/Day10/F22pupil_Day10.slp"
+
+# F23
+	# Analyze Video
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F23/Day1/F23pupil_Day1.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F23/7-30-21/F23pupil_Day1.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F23/Day2/F23pupil_Day2.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F23/8-2-21/F23pupil_Day2.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/WheelF23/Day3/F23pupil_Day3.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F23/8-3-21/F23pupil_Day3.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F23/Day4//F23pupil_Day4.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F23/8-4-21/F23pupil_Day4.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F23/Day5/F23pupil_Day5.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F23/8-5-21/F23pupil_Day5.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F23/Day6/F23pupil_Day6.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F23/8-8-21/Substack(1-19977)_Day6.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F23/Day7/F23pupil_Day7.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F23/8-10-21/F23pupil_Day7.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F23/Day8/F23pupil_Day8.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F23/8-11-21/F23pupil_Day8.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F23/Day9/F23pupil_Day9.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F23/8-12-21/F23pupil_Day9.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F23/Day10/F23pupil_Day10.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F23/8-13-21/F23pupil_Day10.avi"
+
+	# Create Video
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F23/Day1/F23pupil_Day1.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F23/Day1/F23pupil_Day1.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F23/Day2/F23pupil_Day2.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F23/Day2/F23pupil_Day2.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F23/Day3/F23pupil_Day3.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F23/Day3/F23pupil_Day3.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F23/Day4/F23pupil_Day4.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F23/Day4/F23pupil_Day4.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F23/Day5/F23pupil_Day5.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F23/Day5/F23pupil_Day5.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F23/Day6/F23pupil_Day6.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F23/Day6/F23pupil_Day6.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F23/Day7/F23pupil_Day7.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F23/Day7/F23pupil_Day7.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F23/Day8/F23pupil_Day8.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F23/Day8/F23pupil_Day8.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F23/Day9/F23pupil_Day9.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F23/Day9/F23pupil_Day9.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F23/Day10/F23pupil_Day10.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F23/Day10/F23pupil_Day10.slp"
+
+	# Convert Results to h5 for csv files
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F23/Day1/F23pupil_Day1.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F23/Day1/F23pupil_Day1.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F23/Day2/F23pupil_Day2.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F23/Day2/F23pupil_Day2.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F23/Day3/F23pupil_Day3.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F23/Day3/F23pupil_Day3.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F23/Day4/F23pupil_Day4.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F23/Day4/F23pupil_Day4.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F23/Day5/F23pupil_Day5.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F23/Day5/F23pupil_Day5.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/WheelF23/Day6/F23pupil_Day6.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F23/Day6/F23pupil_Day6.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F23/Day7/F23pupil_Day7.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F23/Day7/F23pupil_Day7.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F23/Day8/F23pupil_Day8.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F23/Day8/F23pupil_Day8.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F23/Day9/F23pupil_Day9.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F23/Day9/F23pupil_Day9.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F23/Day10/F23pupil_Day10.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F23/Day10/F23pupil_Day10.slp"
+
+# F25
+	# Analyze Video
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F25/Day1/F25pupil_Day1.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F25/9-22-21/f25pupil_Day1.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F25/Day2/F25pupil_Day2.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F25/9-23-21/F25pupil_Day2.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F25/Day3/F25pupil_Day3.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F25/9-24-21/f25pupil_Day3.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F25/Day4/F25pupil_Day4.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F25/9-27-21/f25pupil_Day4.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F25/Day5/F25pupil_Day5.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F25/9-28-21/f25pupil_Day5.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F25/Day6/F25pupil_Day6.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F25/9-29-21/F25pupil_Day6.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F25/Day7/F25pupil_Day7.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F25/9-30-21/f25pupil2_Day7.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F25/Day8/F25pupil_Day8.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F25/10-4-21/F25_pupil_100421_Day8.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F25/Day9/F25pupil_Day9.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F25/10-5-21/F25_pupil_100521_Day9.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F25/Day10/F25pupil_Day10.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/F25/10-6-21/F25_pupil_100621_Day10.avi"
+
+	# Create Video
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F25/Day1/F25pupil_Day1.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F25/Day1/F25pupil_Day1.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F25/Day2/F25pupil_Day2.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F25/Day2/F25pupil_Day2.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F25/Day3/F25pupil_Day3.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F25/Day3/F25pupil_Day3.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F25/Day4/F25pupil_Day4.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F25/Day4/F25pupil_Day4.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F25/Day5/F25pupil_Day5.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F25/Day5/F25pupil_Day5.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F25/Day6/F25pupil_Day6.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F25/Day6/F25pupil_Day6.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F25/Day7/F25pupil_Day7.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F25/Day7/F25pupil_Day7.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F25/Day8/F25pupil_Day8.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F25/Day8/F25pupil_Day8.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F25/Day9/F25pupil_Day9.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F25/Day9/F25pupil_Day9.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F25/Day10/F25pupil_Day10.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F25/Day10/F25pupil_Day10.slp"
+
+	# Convert Results to h5 for csv files
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F25/Day1/F25pupil_Day1.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F25/Day1/F25pupil_Day1.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F25/Day2/F25pupil_Day2.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F25/Day2/F25pupil_Day2.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F25/Day3/F25pupil_Day3.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F25/Day3/F25pupil_Day3.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F25/Day4/F25pupil_Day4.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F25/Day4/F25pupil_Day4.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F25/Day5/F25pupil_Day5.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F25/Day5/F25pupil_Day5.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F25/Day6/F25pupil_Day6.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F25/Day6/F25pupil_Day6.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F25/Day7/F25pupil_Day7.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F25/Day7/F25pupil_Day7.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F25/Day8/F25pupil_Day8.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F25/Day8/F25pupil_Day8.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F25/Day9/F25pupil_Day9.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F25/Day9/F25pupil_Day9.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F25/Day10/F25pupil_Day10.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/F25/Day10/F25pupil_Day10.slp"
+
+# s14
+	# Analyze Video
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/s14/Day1/s14pupil_Day1.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/s14/9-23-21/S14pupil_Day1.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/s14/Day2/s14pupil_Day2.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/s14/9-24-21/s14pupil_Day2.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/s14/Day3/s14pupil_Day3.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/s14/9-27-21/s14pupil_Day3.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/s14/Day4/s14pupil_Day4.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/s14/9-28-21/s14pupil_Day4.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/s14/Day5/s14pupil_Day5.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/s14/9-29-21/s14pupil_Day5.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/s14/Day6/s14pupil_Day6.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/s14/9-30-21/s14pupil_Day6.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/s14/Day7/s14pupil_Day7.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/s14/10-1-21/S14PUPIL_Day7.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/s14/Day8/s14pupil_Day8.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/s14/10-4-21/s14pupil_Day8.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/s14/Day9/s14pupil_Day9.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/s14/10-5-21/s14pupil_Day9.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/s14/Day10/s14pupil_Day10.slp" "/mnt/beegfs/ozdemik2/SLEAP_Ten_Animal/s14/10-6-21/s14pupil_Day10.avi"
+
+	# Create Video
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/s14/Day1/S14pupil_Day1.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/s14/Day1/s14pupil_Day1.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/s14/Day2/S14pupil_Day2.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/s14/Day2/s14pupil_Day2.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/s14/Day3/S14pupil_Day3.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/s14/Day3/s14pupil_Day3.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/s14/Day4/S14pupil_Day4.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/s14/Day4/s14pupil_Day4.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/s14/Day5/S14pupil_Day5.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/s14/Day5/s14pupil_Day5.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/s14/Day6/S14pupil_Day6.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/s14/Day6/s14pupil_Day6.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/s14/Day7/S14pupil_Day7.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/s14/Day7/s14pupil_Day7.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/s14/Day8/S14pupil_Day8.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/s14/Day8/s14pupil_Day8.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/s14/Day9/S14pupil_Day9.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/s14/Day9/s14pupil_Day9.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/s14/Day10/S14pupil_Day10.mp4" -f 35 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/s14/Day10/s14pupil_Day10.slp"
+
+	# Convert Results to h5 for csv files
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/s14/Day1/S14pupil_Day1.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/s14/Day1/s14pupil_Day1.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/s14/Day2/S14pupil_Day2.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/s14/Day2/s14pupil_Day2.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/s14/Day3/S14pupil_Day3.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/s14/Day3/s14pupil_Day3.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/s14/Day4/S14pupil_Day4.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/s14/Day4/s14pupil_Day4.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/s14/Day5/S14pupil_Day5.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/s14/Day5/s14pupil_Day5.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/s14/Day6/S14pupil_Day6.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/s14/Day6/s14pupil_Day6.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/s14/Day7/S14pupil_Day7.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/s14/Day7/s14pupil_Day7.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/s14/Day8/S14pupil_Day8.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/s14/Day8/s14pupil_Day8.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/s14/Day9/S14pupil_Day9.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/s14/Day9/s14pupil_Day9.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/s14/Day10/S14pupil_Day10.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Wheel/s14/Day10/s14pupil_Day10.slp"
+
+# Airball Data
+
+# F9
+	# Analyze Video 
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F9/Day1/9_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F9/F9_Day5/9_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F9/Day2/9_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F9/F9_Day6/9_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F9/Day3/9_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F9/F9_Day7/9_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F9/Day4/9_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F9/F9_Day8/9_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F9/Day5/9_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F9/F9_Day9/9_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F9/Day6/9_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F9/F9_Day10/9_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F9/Day7/9_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F9/F9_Day12/9_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F9/Day8/9_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F9/F9_Day13/9_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F9/Day9/9_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F9/F9_Day14/9_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F9/Day10/9_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F9/F9_Day15/9_concatenated_pupil.avi"
+
+	# Create Video
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F9/Day1/9_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F9/Day1/9_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F9/Day2/9_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F9/Day2/9_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F9/Day3/9_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F9/Day3/9_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F9/Day4/9_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F9/Day4/9_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F9/Day5/9_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F9/Day5/9_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F9/Day6/9_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F9/Day6/9_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F9/Day7/9_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F9/Day7/9_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F9/Day8/9_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F9/Day8/9_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F9/Day9/9_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F9/Day9/9_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F9/Day10/9_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F9/Day10/9_concatenated_pupil.slp"
+
+	# Convert Results to h5 for csv files
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F9/Day1/9_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F9/Day1/9_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F9/Day2/9_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F9/Day2/9_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F9/Day3/9_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F9/Day3/9_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F9/Day4/9_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F9/Day4/9_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F9/Day5/9_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F9/Day5/9_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F9/Day6/9_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F9/Day6/9_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F9/Day7/9_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F9/Day7/9_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F9/Day8/9_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F9/Day8/9_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F9/Day9/9_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F9/Day9/9_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F9/Day10/9_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F9/Day10/9_concatenated_pupil.slp"
+
+# F22
+
+	# Analyze Video
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F22/Day1/22_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F22/F22_Day3/22_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F22/Day2/22_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F22/F22_Day4/22_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F22/Day3/22_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F22/F22_Day5/22_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F22/Day4/22_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F22/F22_Day6/22_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F22/Day5/22_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F22/F22_Day7/22_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F22/Day6/22_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F22/F22_Day8/22_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F22/Day7/22_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F22/F22_Day9/22_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F22/Day8/22_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F22/F22_Day10/22_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F22/Day9/22_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F22/F22_Day11/22_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F22/Day10/22_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F22/F22_Day12/22_concatenated_pupil.avi"
+
+	# Create Video
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F22/Day1/22_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F22/Day1/22_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F22/Day2/22_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F22/Day2/22_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F22/Day3/22_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F22/Day3/22_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F22/Day4/22_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F22/Day4/22_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F22/Day5/22_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F22/Day5/22_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F22/Day6/22_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F22/Day6/22_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F22/Day7/22_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F22/Day7/22_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F22/Day8/22_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F22/Day8/22_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F22/Day9/22_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F22/Day9/22_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F22/Day10/22_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F22/Day10/22_concatenated_pupil.slp"
+
+	# Convert Results to h5 for csv files
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F22/Day1/The_22_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F22/Day1/22_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F22/Day2/The_22_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F22/Day2/22_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F22/Day3/The_22_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F22/Day3/22_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F22/Day4/The_22_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F22/Day4/22_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F22/Day5/The_22_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F22/Day5/22_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F22/Day6/The_22_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F22/Day6/22_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F22/Day7/The_22_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F22/Day7/22_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F22/Day8/The_22_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F22/Day8/22_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F22/Day9/The_22_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F22/Day9/22_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F22/Day10/The_22_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F22/Day10/22_concatenated_pupil.slp"
+
+# F26
+	# Analyze Video
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F26/Day1/26_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F26/F26_Day3/26_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F26/Day2/26_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F26/F26_Day4/26_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F26/Day3/26_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F26/F26_Day5/26_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F26/Day4/26_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F26/F26_Day6/26_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F26/Day5/26_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F26/F26_Day7/26_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F26/Day6/26_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F26/F26_Day8/26_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F26/Day7/26_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F26/F26_Day9/26_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F26/Day8/26_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F26/F26_Day10/26_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F26/Day9/26_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F26/F26_Day11/26_concatenated_ppil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F26/Day10/26_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F26/F26_Day12/26_concatenated_pupil.avi"
+
+	# Create Video
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F26/Day1/26_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F26/Day1/26_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F26/Day2/26_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F26/Day2/26_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F26/Day3/26_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F26/Day3/26_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F26/Day4/26_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F26/Day4/26_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F26/Day5/26_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F26/Day5/26_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F26/Day6/26_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F26/Day6/26_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F26/Day7/26_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F26/Day7/26_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F26/Day8/26_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F26/Day8/26_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F26/Day9/26_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F26/Day9/26_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F26/Day10/26_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F26/Day10/26_concatenated_pupil.slp"
+
+	# Convert Results to h5 for csv files
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F26/Day1/The_26_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F26/Day1/26_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F26/Day2/The_26_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F26/Day2/26_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F26/Day3/The_26_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F26/Day3/26_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F26/Day4/The_26_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F26/Day4/26_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F26/Day5/The_26_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F26/Day5/26_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F26/Day6/The_26_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F26/Day6/26_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F26/Day7/The_26_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F26/Day7/26_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F26/Day8/The_26_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F26/Day8/26_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F26/Day9/The_26_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F26/Day9/26_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F26/Day10/The_26_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F26/Day10/26_concatenated_pupil.slp"
+
+# F27
+	# Analyze Video
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F27/Day1/27_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F27/F27_Day3/27_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F27/Day2/27_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F27/F27_Day4/27_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F27/Day3/27_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F27/F27_Day5/27_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F27/Day4/27_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F27/F27_Day6/27_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F27/Day5/27_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F27/F27_Day7/27_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F27/Day6/27_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F27/F27_Day8/27_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F27/Day7/27_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F27/F27_Day9/27_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F27/Day8/27_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F27/F27_Day10/27_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F27/Day9/27_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F27/F27_Day11/27_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F27/Day10/27_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F27/F27_Day12/27_concatenated_pupil.avi"
+
+	# Create Video
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F27/Day1/27_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F27/Day1/27_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F27/Day2/27_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F27/Day2/27_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F27/Day3/27_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F27/Day3/27_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F27/Day4/27_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F27/Day4/27_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F27/Day5/27_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F27/Day5/27_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F27/Day6/27_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F27/Day6/27_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F27/Day7/27_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F27/Day7/27_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F27/Day8/27_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F27/Day8/27_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F27/Day9/27_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F27/Day9/27_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F27/Day10/27_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F27/Day10/27_concatenated_pupil.slp"
+
+	# Convert Results to h5 for csv files
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F27/Day1/The_27_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F27/Day1/27_concatenated_pupil.slp"
+	
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F27/Day2/The_27_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F27/Day2/27_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F27/Day3/The_27_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F27/Day3/27_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F27/Day4/The_27_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F27/Day4/27_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F27/Day5/The_27_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F27/Day5/27_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F27/Day6/The_27_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F27/Day6/27_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F27/Day7/The_27_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F27/Day7/27_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F27/Day8/The_27_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F27/Day8/27_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F27/Day9/The_27_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F27/Day9/27_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F27/Day10/The_27_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F27/Day10/27_concatenated_pupil.slp"
+
+# F36
+	# Analyze Video
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F36/Day1/36_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F36/F36_Day3/36_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F36/Day2/36_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F36/F36_Day4/36_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F36/Day3/36_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F36/F36_Day5/36_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F36/Day4/36_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F36/F36_Day6/36_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F36/Day5/36_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F36/F36_Day7/36_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F36/Day6/36_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F36/F36_Day8/36_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F36/Day7/36_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F36/F36_Day9/36_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F36/Day8/36_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F36/F36_Day10/36_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F36/Day9/36_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F36/F36_Day11/36_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F36/Day10/36_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F36/F36_Day12/36_concatenated_pupil.avi"
+
+	# Create Video
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F36/Day1/36_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F36/Day1/36_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F36/Day2/36_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F36/Day2/36_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F36/Day3/36_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F36/Day3/36_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F36/Day4/36_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F36/Day4/36_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F36/Day5/36_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F36/Day5/36_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F36/Day6/36_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F36/Day6/36_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F36/Day7/36_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F36/Day7/36_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F36/Day8/36_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F36/Day8/36_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F36/Day9/36_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F36/Day9/36_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F36/Day10/36_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F36/Day10/36_concatenated_pupil.slp"
+
+	# Convert Results to h5 for csv files
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F36/Day1/The_36_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F36/Day1/36_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F36/Day2/The_36_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F36/Day2/36_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F36/Day3/The_36_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F36/Day3/36_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F36/Day4/The_36_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F36/Day4/36_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F36/Day5/The_36_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F36/Day5/36_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F36/Day6/The_36_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F36/Day6/36_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F36/Day7/The_36_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F36/Day7/36_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F36/Day8/The_36_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F36/Day8/36_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F36/Day9/The_36_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F36/Day9/36_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F36/Day10/The_36_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F36/Day10/36_concatenated_pupil.slp"
+
+
+# F47
+	# Analyze Video
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F47/Day1/47_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F47/F47_Day3/47_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F47/Day2/47_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F47/F47_Day4/47_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F47/Day3/47_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F47/F47_Day5/47_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F47/Day4/47_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F47/F47_Day6/47_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F47/Day5/47_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F47/F47_Day7/47_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F47/Day6/47_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F47/F47_Day8/47_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F47/Day7/47_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F47/F47_Day9/47_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F47/Day8/47_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F47/F47_Day10/47_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F47/Day9/47_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F47/F47_Day11/47_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F47/Day10/47_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F47/F47_Day12/47_concatenated_pupil.avi"
+	
+	# Create Video
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F47/Day1/47_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F47/Day1/47_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F47/Day2/47_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F47/Day2/47_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F47/Day3/47_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F47/Day3/47_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F47/Day4/47_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F47/Day4/47_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F47/Day5/47_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F47/Day5/47_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F47/Day6/47_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F47/Day6/47_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F47/Day7/47_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F47/Day7/47_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F47/Day8/47_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F47/Day8/47_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F47/Day9/47_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F47/Day9/47_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F47/Day10/47_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F47/Day10/47_concatenated_pupil.slp"
+
+	# Convert Results to h5 for csv files
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F47/Day1/The_47_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F47/Day1/47_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F47/Day2/The_47_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F47/Day2/47_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F47/Day3/The_47_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F47/Day3/47_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F47/Day4/The_47_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F47/Day4/47_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F47/Day5/The_47_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F47/Day5/47_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F47/Day6/The_47_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F47/Day6/47_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F47/Day7/The_47_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F47/Day7/47_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F47/Day8/The_47_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F47/Day8/47_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F47/Day9/The_47_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F47/Day9/47_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F47/Day10/The_47_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F47/Day10/47_concatenated_pupil.slp"
+
+# F52
+	# Analyze Video
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F52/Day1/52_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F52/F52_Day3/52_processed_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F52/Day2/52_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F52/F52_Day4/52_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F52/Day3/52_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F52/F52_Day5/52_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F52/Day4/52_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F52/F52_Day6/52_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F52/Day5/52_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F52/F52_Day7/52_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F52/Day6/52_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F52/F52_Day8/52_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F52/Day7/52_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F52/F52_Day9/52_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F52/Day8/52_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F52/F52_Day10/52_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F52/Day9/52_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F52/F52_Day11/52_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F52/Day10/52_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F52/F52_Day12/52_concatenated_pupil.avi"
+
+	# Create Video
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F52/Day1/52_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F52/Day1/52_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F52/Day2/52_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F52/Day2/52_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F52/Day3/52_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F52/Day3/52_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F52/Day4/52_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F52/Day4/52_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F52/Day5/52_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F52/Day5/52_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F52/Day6/52_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F52/Day6/52_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F52/Day7/52_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F52/Day7/52_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F52/Day8/52_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F52/Day8/52_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F52/Day9/52_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F52/Day9/52_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F52/Day10/52_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F52/Day10/52_concatenated_pupil.slp"
+
+	# Convert Results to h5 for csv files
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F52/Day1/The_52_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F52/Day1/52_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F52/Day2/The_52_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F52/Day2/52_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F52/Day3/The_52_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F52/Day3/52_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F52/Day4/The_52_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F52/Day4/52_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F52/Day5/The_52_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F52/Day5/52_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F52/Day6/The_52_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F52/Day6/52_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F52/Day7/The_52_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F52/Day7/52_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F52/Day8/The_52_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F52/Day8/52_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F52/Day9/The_52_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F52/Day9/52_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F52/Day10/The_52_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F52/Day10/52_concatenated_pupil.slp"
+
+# F53
+	# Analyze Video
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F53/Day1/53_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F53/F53_Day3/53_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F53/Day2/53_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F53/F53_Day4/53_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F53/Day3/53_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F53/F53_Day5/53_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F53/Day4/53_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F53/F53_Day6/53_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F53/Day5/53_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F53/F53_Day7/53_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F53/Day6/53_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F53/F53_Day8/53_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F53/Day7/53_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F53/F53_Day9/53_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F53/Day8/53_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F53/F53_Day10/53_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F53/Day9/53_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F53/F53_Day11/53_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F53/Day10/53_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F53/F53_Day12/53_concatenated_pupil.avi"
+	
+	# Create Video
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F53/Day1/53_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F53/Day1/53_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F53/Day2/53_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F53/Day2/53_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F53/Day3/53_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F53/Day3/53_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F53/Day4/53_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F53/Day4/53_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F53/Day5/53_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F53/Day5/53_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F53/Day6/53_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F53/Day6/53_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F53/Day7/53_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F53/Day7/53_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F53/Day8/53_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F53/Day8/53_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F53/Day9/53_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F53/Day9/53_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F53/Day10/53_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F53/Day10/53_concatenated_pupil.slp"
+
+	# Convert Results to h5 for csv files
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F53/Day1/The_53_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F53/Day1/53_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F53/Day2/The_53_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F53/Day2/53_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F53/Day3/The_53_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F53/Day3/53_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F53/Day4/The_53_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F53/Day4/53_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F53/Day5/The_53_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F53/Day5/53_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F53/Day6/The_53_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F53/Day6/53_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F53/Day7/The_53_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F53/Day7/53_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F53/Day8/The_53_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F53/Day8/53_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F53/Day9/The_53_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F53/Day9/53_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F53/Day10/The_53_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F53/Day10/53_concatenated_pupil.slp"
+
+
+# F58
+	# Analyze Video
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F58/Day1/58_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F58/F58_Day3/58_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F58/Day2/58_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F58/F58_Day4/58_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F58/Day3/58_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F58/F58_Day5/58_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F58/Day4/58_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F58/F58_Day6/58_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F58/Day5/58_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F58/F58_Day7/58_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F58/Day6/58_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F58/F58_Day8/58_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F58/Day7/58_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F58/F58_Day9/58_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F58/Day8/58_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F58/F58_Day10/58_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F58/Day9/58_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F58/F58_Day11/58_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F58/Day10/58_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F58/F58_Day12/58_concatenated_pupil.avi"
+
+	# Create Video
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F58/Day1/58_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F58/Day1/58_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F58/Day2/58_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F58/Day2/58_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F58/Day3/58_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F58/Day3/58_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F58/Day4/58_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F58/Day4/58_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F58/Day5/58_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F58/Day5/58_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F58/Day6/58_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F58/Day6/58_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F58/Day7/58_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F58/Day7/58_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F58/Day8/58_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F58/Day8/58_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F58/Day9/58_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F58/Day9/58_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F58/Day10/58_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F58/Day10/58_concatenated_pupil.slp"
+
+	# Convert Results to h5 for csv files
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F58/Day1/The_58_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F58/Day1/58_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F58/Day2/The_58_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F58/Day2/58_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F58/Day3/The_58_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F58/Day3/58_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F58/Day4/The_58_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F58/Day4/58_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F58/Day5/The_58_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F58/Day5/58_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F58/Day6/The_58_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F58/Day6/58_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F58/Day7/The_58_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F58/Day7/58_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F58/Day8/The_58_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F58/Day8/58_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F58/Day9/The_58_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F58/Day9/58_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F58/Day10/The_58_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F58/Day10/58_concatenated_pupil.slp"
+
+# F68
+	# Analyze Video
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F68/Day1/68_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F68/F68_Day3/68_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F68/Day2/68_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F68/F68_Day4/68_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F68/Day3/68_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F68/F68_Day5/68_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F68/Day4/68_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F68/F68_Day6/68_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F68/Day5/68_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F68/F68_Day7/68_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F68/Day6/68_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F68/F68_Day8/68_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F68/Day7/68_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F68/F68_Day9/68_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F68/Day8/68_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F68/F68_Day10/68_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F68/Day9/68_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F68/F68_Day11/68_concatenated_pupil.avi"
+
+	time sleap-track -m "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/models/240120_173429.single_instance.n=400" --tracking.tracker flow --tracking.similarity centroid --tracking.match greedy --tracking.kf_node_indices 0,1,2,3 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F68/Day10/68_concatenated_pupil.slp" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball_Data/F68/F68_Day12/68_concatenated_pupil.avi"
+
+	# Create Video
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F68/Day1/68_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F68/Day1/68_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F68/Day2/68_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F68/Day2/68_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F68/Day3/68_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F68/Day3/68_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F68/Day4/68_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F68/Day5/68_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F68/Day5/68_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F68/Day5/68_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F68/Day6/68_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F68/Day6/68_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F68/Day7/68_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F68/Day7/68_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F68/Day8/68_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F68/Day8/68_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F68/Day9/68_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F68/Day9/68_concatenated_pupil.slp"
+
+	time sleap-render -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F68/Day10/68_concatenated_pupil.mp4" -f 40 "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F68/Day10/68_concatenated_pupil.slp"
+
+	# Convert Results to h5 for csv files
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F68/Day1/The_68_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F68/Day1/68_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F68/Day2/The_68_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F68/Day2/68_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F68/Day3/The_68_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F68/Day3/68_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F68/Day4/The_68_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F68/Day4/68_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F68/Day5/The_68_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F68/Day5/68_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F68/Day6/The_68_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F68/Day6/68_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F68/Day7/The_68_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F68/Day7/68_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F68/Day8/The_68_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F68/Day8/68_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F68/Day9/The_68_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F68/Day9/68_concatenated_pupil.slp"
+
+	sleap-convert --format h5 -o "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F68/Day10/The_68_concatenated_pupil.h5" "/home/ozdemik2/beegfs/Novel_Analysis/Super_Model_252/Airball/F68/Day10/68_concatenated_pupil.slp"
+
