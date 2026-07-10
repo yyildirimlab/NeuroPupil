@@ -18,6 +18,16 @@ This tool incorporates the optimized parameter combination specifically identifi
 
 **Please see [sleapGUI](https://github.com/khicken/sleapGUI) for installation instructions.**
 
+
+## NeuroPupil Pretrained Models
+
+NeuroPupil Animal Model: [Download Here](https://zenodo.org/records/21298222)
+
+NeuroPupil Human Model: [Download Here](https://zenodo.org/records/21298277)
+
+Note: Make sure you have the SLEAP Version 1.4.1 downloaded 
+
+
 ## Usage Demo
 
 Tutorial Videos to Replicate NeuroPupil using your data:
