@@ -28,7 +28,7 @@ This tool incorporates the optimized parameter combination specifically identifi
 Note: Make sure you have the SLEAP Version 1.4.1 downloaded 
 
 
-## Usage Demo
+## Getting Started
 
 Tutorial Videos to Replicate NeuroPupil using your data:
 
