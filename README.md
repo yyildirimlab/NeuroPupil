@@ -98,7 +98,7 @@ In the paper, 200 videos were used to create a concatenated video for NeuroPupil
 
 13. Go to **Single Instance Model Configuration**, and select **baseline_large_rf.single(baseline_large_rf.single.json)** file on the top.
 
-14. In the Model section on the Top Right, set the **Max Stride** and **Filters** to **64**
+14. In the Model section on the Top Right, set the **Max Stride** and **Filters** to **64**. Keep the other parameters the same.
 
 15. Once the model parameters are set, click **Run** on the Bottom Right.
 
